@@ -40,3 +40,11 @@ The installed copy lives in `~/.claude/plugins/cache/model-thrift/model-thrift/<
 How to tell it works: before launching a helper, Claude writes a line like `🔀 sonnet: find where the store map widget lives`.
 
 Update: `claude plugin marketplace update model-thrift`. Disable: `claude plugin disable model-thrift@model-thrift`.
+
+## Maintenance
+
+- Any change to `rule.md` or `hooks/` needs a higher `version` in `.claude-plugin/plugin.json`; without it `claude plugin update` reports "already at the latest version" and nobody gets the change.
+- Run `bash tests/check.sh` before every push; it must end with `all green`. It also fails when a rule or hook change is missing the version bump.
+- Never rename the plugin or the marketplace (both `model-thrift`): every existing install would stop updating.
+- Roll back with `git revert`, then bump the version and push; the revert ships like any other update.
+- Users with auto-update on get new versions within minutes of starting a session and a prompt to run `/reload-plugins`; everyone else runs `claude plugin marketplace update model-thrift` and `claude plugin update model-thrift@model-thrift`.
