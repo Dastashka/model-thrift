@@ -62,7 +62,7 @@ Most savings here come from working smarter on the session model, not from deleg
 Every turn re-sends the whole context, so a long session costs more per turn than the work itself; auto-compaction only caps it near the window limit.
 
 - When a task is finished and the next one is unrelated, suggest a new session in one line, after saving anything worth keeping to memory.
-- When this plugin's hook reports a large context, relay it to the user in one line at the next natural break, not mid-task.
+- When this plugin's hook reports a large context, relay it in one line only after the whole task the user asked for is finished. Never suggest a new session mid-task, and do not treat a finished sub-step as the end of the task.
 
 ## Always
 

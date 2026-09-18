@@ -17,4 +17,4 @@ bucket=$((total / step))
 marker="${TMPDIR:-/tmp}/model-thrift-$session"
 [ -f "$marker" ] && [ "$(<"$marker")" = "$bucket" ] && exit 0
 echo "$bucket" > "$marker"
-echo "model-thrift: this session's context is about $((total / 1000))k tokens and every turn re-reads all of it. At the next natural break, tell the user in one line and suggest saving what matters to memory and starting a new session."
+echo "model-thrift: this session's context is about $((total / 1000))k tokens and every turn re-reads all of it. Only once the whole task the user asked for is finished, tell the user in one line and suggest saving what matters to memory and starting a new session. While that task is unfinished, say nothing about it: finishing in this session is cheaper than moving."
