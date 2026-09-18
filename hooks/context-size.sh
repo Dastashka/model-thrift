@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-threshold=200000
+threshold=500000
 step=100000
 input=$(cat)
 [[ $input =~ \"transcript_path\":\"([^\"]*)\" ]] || exit 0

@@ -5,7 +5,7 @@ Saves the expensive model's tokens: the session model thinks, cheaper helper sub
 What it contains:
 - the rule is injected into every new session, after `/clear` and after context compaction;
 - a guard that rejects any helper launched without an explicit model (otherwise it silently runs on the expensive one);
-- a context hint: once a session passes 200k tokens (and at every further 100k), Claude suggests saving notes and starting a new session. It only suggests; nothing is closed.
+- a context hint: once a session passes 500k tokens (and at every further 100k), Claude suggests saving notes and starting a new session. It only suggests; nothing is closed.
 
 ## Install
 

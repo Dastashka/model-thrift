@@ -1,5 +1,5 @@
 {
   "name": "model-thrift",
-  "version": "0.3.3",
+  "version": "0.3.4",
   "description": "Think with the expensive model, execute with cheaper helpers: an always-on delegation rule plus a guard that rejects subagents launched without an explicit model."
 }

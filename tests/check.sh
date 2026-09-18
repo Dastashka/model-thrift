@@ -20,7 +20,7 @@ check "session start prints the rule" "$first_line" "# Model delegation rule (mo
 
 scratch=$(mktemp -d)
 session="check-$$"
-printf '%s\n' '{"message":{"usage":{"input_tokens":2,"cache_read_input_tokens":250000,"cache_creation_input_tokens":1000}}}' > "$scratch/big.jsonl"
+printf '%s\n' '{"message":{"usage":{"input_tokens":2,"cache_read_input_tokens":550000,"cache_creation_input_tokens":1000}}}' > "$scratch/big.jsonl"
 printf '%s\n' '{"message":{"usage":{"input_tokens":2,"cache_read_input_tokens":5000,"cache_creation_input_tokens":0}}}' > "$scratch/small.jsonl"
 big="{\"session_id\":\"$session\",\"transcript_path\":\"$scratch/big.jsonl\"}"
 hint=$(printf '%s' "$big" | bash hooks/context-size.sh)
