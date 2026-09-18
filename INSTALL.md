@@ -8,10 +8,10 @@ The user asked you to set up the model-thrift plugin. Do these steps in order an
    claude plugin marketplace add Dastashka/model-thrift
    ```
    ```bash
-   claude plugin install model-thrift@toxic-studio --scope user
+   claude plugin install model-thrift@model-thrift --scope user
    ```
-   If it is already installed, run `claude plugin marketplace update toxic-studio` and `claude plugin update model-thrift@toxic-studio` instead.
-3. **Find conflicting instructions.** Read `~/.claude/CLAUDE.md`, plus `CLAUDE.md`, `CLAUDE.local.md` and the auto-memory index (`MEMORY.md`) of the current project if they exist. Look for passages that decide which model subagents use or when to delegate to them. Read the installed rule at `~/.claude/plugins/cache/toxic-studio/model-thrift/<version>/rule.md` to compare.
+   If it is already installed, run `claude plugin marketplace update model-thrift` and `claude plugin update model-thrift@model-thrift` instead.
+3. **Find conflicting instructions.** Read `~/.claude/CLAUDE.md`, plus `CLAUDE.md`, `CLAUDE.local.md` and the auto-memory index (`MEMORY.md`) of the current project if they exist. Look for passages that decide which model subagents use or when to delegate to them. Read the installed rule at `~/.claude/plugins/cache/model-thrift/model-thrift/<version>/rule.md` to compare.
    - A passage that contradicts the rule, or duplicates it: a conflict.
    - A project-specific refinement (a minimum model for some code, code marked as sensitive): keep it, not a conflict.
 4. **Clean up with consent.** Show the user every conflicting passage with its file path and propose removing it. Remove only the passages the user approves, and nothing else. Never edit files you were not asked about.

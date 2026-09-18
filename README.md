@@ -24,7 +24,7 @@ Needs `bash` (on Windows: Git for Windows). Without it both hooks fail silently:
    claude plugin marketplace add Dastashka/model-thrift
    ```
    ```bash
-   claude plugin install model-thrift@toxic-studio --scope user
+   claude plugin install model-thrift@model-thrift --scope user
    ```
 2. Remove any section about model choice or subagents from your `~/.claude/CLAUDE.md`; the plugin replaces it.
 3. Start a new session.
@@ -35,8 +35,8 @@ Sessions opened before the install (or resumed ones) do not get the rule automat
 Read <path to plugin>/rule.md and follow it for the rest of this session
 ```
 
-The installed copy lives in `~/.claude/plugins/cache/toxic-studio/model-thrift/<version>/rule.md`.
+The installed copy lives in `~/.claude/plugins/cache/model-thrift/model-thrift/<version>/rule.md`.
 
 How to tell it works: before launching a helper, Claude writes a line like `🔀 sonnet: find where the store map widget lives`.
 
-Update: `claude plugin marketplace update toxic-studio`. Disable: `claude plugin disable model-thrift@toxic-studio`.
+Update: `claude plugin marketplace update model-thrift`. Disable: `claude plugin disable model-thrift@model-thrift`.
