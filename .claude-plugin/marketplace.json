@@ -1,0 +1,13 @@
+{
+  "name": "toxic-studio",
+  "owner": {
+    "name": "Toxic Studio"
+  },
+  "plugins": [
+    {
+      "name": "model-thrift",
+      "source": "./",
+      "description": "Always-on model delegation rule plus a guard against subagents that silently inherit the expensive model."
+    }
+  ]
+}
