@@ -13,6 +13,8 @@ Complexity decides who thinks. Volume decides whether a helper is worth its over
 
 Volume = what the session model itself would have to read or write. If that is less than writing a brief plus reading the report, do it yourself: one grep, one known file, a few-line edit, anything you need verbatim for an Edit.
 
+In a large session every tool call re-reads the whole context, so a run of several easy calls is large volume too. Admin sequences (opening a PR, tracker updates, chat pings): the session model writes the text and gets any write permission from the user first; a `sonnet` helper runs the calls, with the text, the permission and the exact targets (IDs, mention syntax) in its brief. One or two calls, or a fresh session: do them yourself.
+
 ## Which helper model
 
 - Search, exploration, reading many files, logs, PDFs: `sonnet`, whatever the session model is.
